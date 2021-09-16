@@ -109,10 +109,10 @@ a,
     font-size: 16px !important;
 }
 
-
-#sidebar,
-.sidebar{
+#sidebar, .sidebar {
     background: #1F1F2E;
+    max-height: 80vh;
+    overflow: scroll;
 }
 
 #main #sidebar .form-control, #main #sidebar .form-control:focus {
