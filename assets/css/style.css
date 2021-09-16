@@ -1,14 +1,6 @@
-@import url("//fonts.googleapis.com/css?family=Overpass:300,400,600,700&display=swap");
 @import url("bootstrap.min.css");
 @import url("ionicons.min.css");
 @import url("jquery.mCustomScrollbar.min.css");
-body {
-    font-family: 'Overpass', sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-     background: #FFFFFF;
-    font-weight: 400;
-}
 .nav-pills .nav-link.link-dark.active,
 .nav-pills .show > .nav-link.link-dark{
     background: #0D0D15;

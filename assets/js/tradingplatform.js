@@ -226,6 +226,9 @@ document.getElementById('captcha').innerHTML="";
 	password:password,
 	captcha:v
 	}
+
+	console.log(data);
+
 	  $.blockUI({message: '<img width="30" height="30" src="assets/img/loader.gif" />', css: {backgroundColor: 'transparent', border: 'none'}});
 	callAjax(BaseURL+'login', 'POST', JSON.stringify(data), Login_Callback);
 }

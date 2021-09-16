@@ -221,7 +221,7 @@ tbody, td, tfoot, th, thead, tr {
     width: 100vw;
     height: 50vh;
     display: block;
-    background: url("../media/GoldCoin-Trading-Plattform.png") no-repeat center 5vh transparent;
+    background: url("media/GoldCoin-Trading-Plattform.png") no-repeat center 5vh transparent;
     background-size: auto;
     background-size: 100vw;
     z-index: -1;
@@ -245,7 +245,7 @@ tbody, td, tfoot, th, thead, tr {
         height: 100vh;
         height: 100vh;
         position: absolute;
-        background: url("../media/GoldCoin-Trading-Plattform.png") no-repeat left bottom transparent;
+        background: url("media/GoldCoin-Trading-Plattform.png") no-repeat left bottom transparent;
         background-size: contain;
         left: 0;
         bottom: -50px;
