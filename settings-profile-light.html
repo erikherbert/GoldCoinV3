@@ -1,74 +1,92 @@
+<div class="container-xl">
+  <div class="row">
+    <div id="main" class="col-12 p-4 pt-0 p-md-0">
+
+      <h2 class="w-100 d-block text-white text-center text-md-start mb-3">Settings</h2>
+
+      <div class="card mb-3">
+        <div class="card-body">
 
 
+          <h5 class="card-title">General Information</h5>
 
-  
-  <div class="settings mtb15">
-    <div class="container-fluid">
-      <div class="row">
-       
-        <div class="col-md-12 col-lg-12">
-          <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="settings-profile" role="tabpanel"
-              aria-labelledby="settings-profile-tab">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">General Information</h5>
-                  <div class="settings-profile">
-                    <form>
-                      <div class="form-row mt-4">
-                        <div class="col-md-6">
-                          <label for="formFirst">Full name</label>
-                          <input id="formFirst" type="text" disabled class="form-control form-control-lg" placeholder="Full name">
-                        </div>
-                        <div class="col-md-6">
-                          <label for="formEmail">Email</label>
-                          <input id="formEmail" type="text" disabled class="form-control form-control-lg" placeholder="Email">
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+          <form>
+
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+
+                <label for="formFirst">Full name</label>
+                <input id="formFirst" type="text" disabled class="form-control form-control-lg" placeholder="Full name">
+
               </div>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Security Information</h5>
-                  <div class="settings-profile">
-                    <form>
-                      <div class="form-row">
-					  <div class="col-md-6">
+
+              <div class="col-md-6 mb-3">
+
+                <label for="formEmail">Email</label>
+                <input id="formEmail" type="text" disabled class="form-control form-control-lg" placeholder="Email">
+
+              </div>
+
+            </div>
+
+          </form>
+
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+
+
+          <h5 class="card-title">Security Information</h5>
+
+                <form>
+
+                  <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
                           <label for="currentPass">Current password</label>
                           <input id="oldpassword" type="password" class="form-control form-control-lg" placeholder="Enter your password">
+
                         </div>
-						<div class="col-md-6">
-						<div id="fabox">
-                          <label for="currentPass">2 FA Code</label>
-                          <input id="facode" type="password" class="form-control form-control-lg" placeholder="Enter 2 FA Code">
-                        </div></div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-6 mb-3">
+
+                          <div id="fabox">
+                            <label for="currentPass">2 FA Code</label>
+                            <input id="facode" type="password" class="form-control form-control-lg" placeholder="Enter 2 FA Code">
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
                           <label for="currentPass">New password</label>
                           <input id="newpassword" type="password" class="form-control form-control-lg" placeholder="Enter new  password">
                         </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-6 mb-3">
                           <label for="newPass">Confirm password</label>
                           <input id="confirmpassword" type="password" class="form-control form-control-lg" placeholder="Enter confirm password">
                         </div>
-                                    <input type="button" class="btn btn-primary" onclick="changePassword()" value="Update">
+
+                        <div class="col-md-12 mb-3">
+                          <input type="button" class="btn btn-primary" onclick="changePassword()" value="Update">
                         </div>
-                      </div>
-                    </form>
+
                   </div>
-                </div>
-              </div>
-            </div>
-           </div>
+
+                </form>
+
+
         </div>
       </div>
+
+
     </div>
   </div>
+</div>
 
-
-
-
-
-
-  <script>getCustomerInformation();</script>
+<script>getCustomerInformation();</script>

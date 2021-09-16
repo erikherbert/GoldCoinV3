@@ -660,9 +660,8 @@ function getCustomerAssets_Callback(result)
 		 $("#assetslist").html("");
 		for(var i=0;i<result.data.info.length;i++)
 		{
-				$("#assetlist").append('<tr onclick="window.location=\'index.html?assetId='+result.data.info[i].asset.id+'&assetName='+result.data.info[i].asset.symbol+'\'"> <td><img style="height:40px" src="'+result.data.info[i].asset.imageUrl+'"></img>'+result.data.info[i].asset.name+'</td> <td>'+result.data.info[i].customer.balance.toFixed(2)+'</td> <td><i class="icon ion-md-lock"></i>'+result.data.info[i].customer.lockedBalance.toFixed(2)+'</td> </tr>');
-		//$("#assetlist").append('<li  class="productlist-product mb-3 d-flex flex-nowrap justify-content-between">                    <div class="file-thumbnail me-2">                        <img class="fit-cover rounded-3" src="'+result.data.info[i].asset.imageUrl+'" alt="">                    </div>                    <div class="me-3 w-100">                        <h6 class="mb-1">'+result.data.info[i].asset.name+'</h6>                        <div class="d-flex flex-nowrap justify-content-between">                            <h6 class="text-secondary" >0.00 EUR</h6><span class="badge bg-success" ><i class="bi-caret-up-fill"></i> +0.00 EUR (0.00%)</span>                        </div>                    </li>                                   </div>');
-	
+			$("#assetlist").append('<tr onclick="window.location=\'index.html?assetId='+result.data.info[i].asset.id+'&assetName='+result.data.info[i].asset.symbol+'\'"> <td class="d-flex"><div class="file-thumbnail me-2"><img src="'+result.data.info[i].asset.imageUrl+'"></img></div>'+result.data.info[i].asset.name+'</td> <td>'+result.data.info[i].customer.balance.toFixed(2)+'</td> <td><i class="icon ion-md-lock"></i>'+result.data.info[i].customer.lockedBalance.toFixed(2)+'</td> </tr>');
+
 		}
 		$("#totalBal").html((parseFloat(result.data.balance)+parseFloat(result.data.lockedBalance)).toFixed(2)+" EUR");
 		$("#lockBal").html(result.data.lockedBalance.toFixed(2)+" EUR");
