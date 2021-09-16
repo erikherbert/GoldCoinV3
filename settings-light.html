@@ -1,114 +1,97 @@
 
-  <div class="settings mtb15">
-    <div class="container-fluid">
-      <div class="row">
-      
-        <div class="col-md-12 col-lg-12">
-          <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="settings-tab">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Notifications</h5>
-                  <div class="settings-notification">
-                    <ul>
-                      <!-- <li> -->
-                        <!-- <div class="notification-info"> -->
-                          <!-- <p>Update price</p> -->
-                          <!-- <span>Get the update price in your dashboard</span> -->
-                        <!-- </div> -->
-                        <!-- <div class="custom-control custom-switch"> -->
-                          <!-- <input type="checkbox" class="custom-control-input"> -->
-                          <!-- <label class="custom-control-label"></label> -->
-                        <!-- </div> -->
-                      <!-- </li> -->
-                      <li>
-                        <div class="notification-info">
-                          <p>2FA</p>
-                          <span>Enable two factor authentication service</span>
-                        </div>
-                        <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" onclick="SecurityChange()" id="tfa" checked>
-                          <label class="custom-control-label" for="tfa"></label>
-                        </div>
-					</li><li class="tfa-wrap">
-		  <div class="two-fa-container row text-white">					
-					<div class="col-md-4 two-fa-step">
-						<span class="num">Step 1</span>
-						<h4>Install Google Authenticator to your device</h4>
-						<p>Google Authenticator available on below stores</p>
-						<div class="app-img">
-						   <img src="assets/img/app-store.png">
-						</div>
-					</div>			
-				    <div class="col-md-4 two-fa-step">
-						<span class="num">Step 2</span>
-						<h4>Scan the code with your device</h4>
-						<p>Secure Key: <p id="tfacode">C3ZU3UXNTTDZJVWJOJW5EXQIS6LRTA56</p></p>
-						<div class="app-img-barcode">
-							<img id="qrcode" src="assets/img/barcode.png">
-						</div>
-					</div>
-					<div class="col-md-4 two-fa-step" id="fadiv">
-						<span class="num">Step 3</span>
-						<ul class="form-list">
-							<li>
-								<div class="input-box"> 
-								  <label>Enter Validation Code from Device</label>
-								  <div class="iconed">
-								     <i class="fas fa-lock"></i>
-								     <input type="text" maxlength=6  onkeyup="SubmitCode()" id="code" class="form-control"/>
-								  </div>
-								</div>
-							</li>
-							
-					    </ul>
-					</div>
-			   </div>
-		
-                      </li>
-                      <!-- <li> -->
-                        <!-- <div class="notification-info"> -->
-                          <!-- <p>Latest news</p> -->
-                          <!-- <span>Get the latest news in your mail</span> -->
-                        <!-- </div> -->
-                        <!-- <div class="custom-control custom-switch"> -->
-                          <!-- <input type="checkbox" class="custom-control-input" id="notification3"> -->
-                          <!-- <label class="custom-control-label" for="notification3"></label> -->
-                        <!-- </div> -->
-                      <!-- </li> -->
-                      <!-- <li> -->
-                        <!-- <div class="notification-info"> -->
-                          <!-- <p>Email Service</p> -->
-                          <!-- <span>Get security code in your mail</span> -->
-                        <!-- </div> -->
-                        <!-- <div class="custom-control custom-switch"> -->
-                          <!-- <input type="checkbox" class="custom-control-input" id="notification4" checked> -->
-                          <!-- <label class="custom-control-label" for="notification4"></label> -->
-                        <!-- </div> -->
-                      <!-- </li> -->
-                     
-                    </ul>
-                  </div>
-                </div>
-              </div>
-               </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script>
-  Register2fa();
-  jQuery(function($){
-		  $('#tfa').change(function(){
-			 if ($(this).is(':checked')) {
-				 $('.tfa-wrap').show();
-			 }
-			 else{
-				 $('.tfa-wrap').hide();
-			 }
-		  });
-	  });
-  </script>
 
-  
+                <div id="main" class="col-12 p-4 pt-0 p-md-0">
+
+                    <div class="h-100 py-4 pt-0 text-white">
+
+                        <h1 class="w-100 d-block text-center text-md-start">Settings</h1>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Notifications</h5>
+
+                                <ul class="list-group">
+
+                                    <li class="list-group-item px-0 text-white d-flex justify-content-between">
+                                        <div class="notification-info">
+                                            <p class="mb-0">2FA</p>
+                                            <span class="small text-muted">Unable two factor authentication service</span>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" class="form-check-input" id="notification2" onclick="SecurityChange()" checked="">
+                                            <label class="form-check-label" for="notification2"></label>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4">2-Factor-Authentication</h5>
+                                <div class="row gx-5">
+
+                                    <div class="col-12 col-md-4">
+                                        <p class="small text-uppercase">Step 1</p>
+                                        <h4 class="mb-3">Install Google Authenticator to your device</h4>
+
+                                        <img class="img-fluid mt-3" src="assets/media/app-store.png" alt="App Store">
+
+                                    </div>
+
+                                    <div class="col-12 col-md-4 mt-5 mt-md-0">
+                                        <p class="small text-uppercase">Step 2</p>
+                                        <h4 class="mb-3">Scan the code with your device</h4>
+
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" value="Ad87deD4gEe8dG57Ede4eEg5dREs4d5e8f4e" readonly="">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-primary">COPY</button>
+                                            </div>
+                                        </div>
+
+                                        <img class="img-fluid w-25 mt-3" src="assets/media/qr-code-light.svg" alt="qr-code">
+
+                                    </div>
+
+                                    <div class="col-12 col-md-4 mt-5 mt-md-0">
+                                        <p class="small text-uppercase">Step 3</p>
+                                        <h4 class="mb-3">Enter Validation Code from Device</h4>
+
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" maxlength=6  onkeyup="SubmitCode()" value="">
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+<script>
+Register2fa();
+jQuery(function($){
+      $('#tfa').change(function(){
+         if ($(this).is(':checked')) {
+             $('.tfa-wrap').show();
+         }
+         else{
+             $('.tfa-wrap').hide();
+         }
+      });
+  });
+</script>
+
+
+</body>
+</html>
