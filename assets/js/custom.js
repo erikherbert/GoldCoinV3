@@ -1,6 +1,8 @@
 (function ($) {
   'use strict';
   // Depth Chart
+
+
   function DepthChart() {
     // Add data
     chart.dataSource.url =
@@ -126,7 +128,6 @@
     // Add cursor
     chart.cursor = new am4charts.XYCursor();
   }
-
   if (document.getElementById('darkDepthChart')) {
     function am4themes_dark(target) {
       if (target instanceof am4core.InterfaceColorSet) {
@@ -165,7 +166,6 @@
     ).properties.fill = am4core.color('#00cc93');
     DepthChart();
   }
-
   if (document.getElementById('lightDepthChart')) {
     var chart = am4core.create('lightDepthChart', am4charts.XYChart);
     chart.zoomOutButton.background.fill = am4core.color('rgba(0, 0, 0, 0.09)');
@@ -175,7 +175,6 @@
     ).properties.fill = am4core.color('#00cc93');
     DepthChart();
   }
-
   if (document.getElementById('marketsChartBtcLight')) {
     am4core.ready(function () {
       // Create chart
@@ -250,7 +249,6 @@
       }
     });
   }
-
   if (document.getElementById('marketsChartEthLight')) {
     am4core.ready(function () {
       // Create chart
@@ -325,7 +323,6 @@
       }
     });
   }
-
   if (document.getElementById('marketsChartLtcLight')) {
     am4core.ready(function () {
       // Create chart
@@ -474,7 +471,6 @@
       }
     });
   }
-
   if (document.getElementById('marketsChartBtcDark')) {
     am4core.ready(function () {
       // Create chart
@@ -549,7 +545,6 @@
       }
     });
   }
-
   if (document.getElementById('marketsChartEthDark')) {
     am4core.ready(function () {
       // Create chart
@@ -624,7 +619,6 @@
       }
     });
   }
-
   if (document.getElementById('marketsChartLtcDark')) {
     am4core.ready(function () {
       // Create chart
@@ -772,6 +766,10 @@
       }
     });
   }
+
+
+
+
   // make tr linkable
   $('.markets-pair-list tr').click(function () {
     window.location = $(this).data('href');

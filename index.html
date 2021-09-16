@@ -205,7 +205,7 @@ DASHBOARD
 #################
 -->
 
-<div class="container-fluid mtb15" id="main">
+<div class="container-fluid mtb15 admin-container" id="main">
 <div class="row sm-gutters">
 
 
@@ -592,8 +592,41 @@ FOOTER
 
 
 
+
+
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+<!-- <script src="assets/js/custom.js"></script> -->
+
+
+
+<script src="assets/js/tradingplatform.js"></script>
+
+
+<script>
+    function LoadAjaxContent(page,id) {
+        $.ajax({
+            url: page,
+            type: 'GET',
+            success: function (result) {
+                clearInterval(orderbookInterval);
+                $('.admin-container').html(result);
+                $("#dark").attr("class",id);
+            },
+            error: function () {
+                bootbox.alert("There may be some network issue, please try again!!");
+
+            }
+        });
+    }
+    checksession();
+</script>
+
+
+
 <!-- Bootstrap JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
@@ -607,8 +640,7 @@ FOOTER
 <script src="assets/js/common.js"></script>
 <script src="assets/js/jquery.blockUI.js"></script>
 
-<script src="assets/js/custom.js"></script>
-<script src="assets/js/tradingplatform.js"></script>
+
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
