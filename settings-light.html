@@ -1,0 +1,114 @@
+
+  <div class="settings mtb15">
+    <div class="container-fluid">
+      <div class="row">
+      
+        <div class="col-md-12 col-lg-12">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="settings-tab">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Notifications</h5>
+                  <div class="settings-notification">
+                    <ul>
+                      <!-- <li> -->
+                        <!-- <div class="notification-info"> -->
+                          <!-- <p>Update price</p> -->
+                          <!-- <span>Get the update price in your dashboard</span> -->
+                        <!-- </div> -->
+                        <!-- <div class="custom-control custom-switch"> -->
+                          <!-- <input type="checkbox" class="custom-control-input"> -->
+                          <!-- <label class="custom-control-label"></label> -->
+                        <!-- </div> -->
+                      <!-- </li> -->
+                      <li>
+                        <div class="notification-info">
+                          <p>2FA</p>
+                          <span>Enable two factor authentication service</span>
+                        </div>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" onclick="SecurityChange()" id="tfa" checked>
+                          <label class="custom-control-label" for="tfa"></label>
+                        </div>
+					</li><li class="tfa-wrap">
+		  <div class="two-fa-container row text-white">					
+					<div class="col-md-4 two-fa-step">
+						<span class="num">Step 1</span>
+						<h4>Install Google Authenticator to your device</h4>
+						<p>Google Authenticator available on below stores</p>
+						<div class="app-img">
+						   <img src="assets/img/app-store.png">
+						</div>
+					</div>			
+				    <div class="col-md-4 two-fa-step">
+						<span class="num">Step 2</span>
+						<h4>Scan the code with your device</h4>
+						<p>Secure Key: <p id="tfacode">C3ZU3UXNTTDZJVWJOJW5EXQIS6LRTA56</p></p>
+						<div class="app-img-barcode">
+							<img id="qrcode" src="assets/img/barcode.png">
+						</div>
+					</div>
+					<div class="col-md-4 two-fa-step" id="fadiv">
+						<span class="num">Step 3</span>
+						<ul class="form-list">
+							<li>
+								<div class="input-box"> 
+								  <label>Enter Validation Code from Device</label>
+								  <div class="iconed">
+								     <i class="fas fa-lock"></i>
+								     <input type="text" maxlength=6  onkeyup="SubmitCode()" id="code" class="form-control"/>
+								  </div>
+								</div>
+							</li>
+							
+					    </ul>
+					</div>
+			   </div>
+		
+                      </li>
+                      <!-- <li> -->
+                        <!-- <div class="notification-info"> -->
+                          <!-- <p>Latest news</p> -->
+                          <!-- <span>Get the latest news in your mail</span> -->
+                        <!-- </div> -->
+                        <!-- <div class="custom-control custom-switch"> -->
+                          <!-- <input type="checkbox" class="custom-control-input" id="notification3"> -->
+                          <!-- <label class="custom-control-label" for="notification3"></label> -->
+                        <!-- </div> -->
+                      <!-- </li> -->
+                      <!-- <li> -->
+                        <!-- <div class="notification-info"> -->
+                          <!-- <p>Email Service</p> -->
+                          <!-- <span>Get security code in your mail</span> -->
+                        <!-- </div> -->
+                        <!-- <div class="custom-control custom-switch"> -->
+                          <!-- <input type="checkbox" class="custom-control-input" id="notification4" checked> -->
+                          <!-- <label class="custom-control-label" for="notification4"></label> -->
+                        <!-- </div> -->
+                      <!-- </li> -->
+                     
+                    </ul>
+                  </div>
+                </div>
+              </div>
+               </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  Register2fa();
+  jQuery(function($){
+		  $('#tfa').change(function(){
+			 if ($(this).is(':checked')) {
+				 $('.tfa-wrap').show();
+			 }
+			 else{
+				 $('.tfa-wrap').hide();
+			 }
+		  });
+	  });
+  </script>
+
+  

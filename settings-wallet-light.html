@@ -1,0 +1,167 @@
+
+  <div class="settings mtb15">
+    <div class="container-fluid">
+      <div class="row">
+       
+        <div class="col-md-12 col-lg-12">
+          <div class="tab-content" id="v-pills-tabContent">
+             <div class="tab-pane fade show active" id="settings-wallet" role="tabpanel"
+              aria-labelledby="settings-wallet-tab">
+              <div class="wallet">
+                <div class="row">
+                  <div class="col-md-12 col-lg-4">
+                     <div class="market-pairs">
+          <div class="input-group"> 
+            <div class="input-group-prepend">
+              <span id="inputGroup-sizing-sm"><i class="icon ion-md-search"></i></span> 
+            </div>
+            <input type="text" class="form-control" onkeyup="search()" id="search" placeholder="Search" aria-describedby="inputGroup-sizing-sm"> 
+          </div>
+         
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="GLDB250g" role="tabpanel">
+              <table class="table" id="assettable">
+                <thead>
+                  <tr>
+                    <th>Assets</th>
+                    <th>Balance</th>
+                    <th>Locked Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="assetlist">
+                 
+
+                </tbody>
+              </table>
+            </div>
+       
+          </div>
+		            </div>
+        </div>
+                  <div class="col-md-12 col-lg-8">
+                    <div class="tab-content">
+                      <div class="tab-pane fade show active" id="coinEUR" role="tabpanel">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Balances</h5>
+                            <ul>
+                              <li class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                  <i class="icon ion-md-cash"></i>
+                                  <h2>Total Balance</h2>
+                                </div>
+                                <div>
+                                  <h3 id="totalBal">0.00 EUR</h3>
+                                </div>
+                              </li>
+							  <li class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                  <i class="icon ion-md-lock"></i>
+                                  <h2>Locked Balance</h2>
+                                </div>
+                                <div>
+                                  <h3 id="lockBal">0.00 EUR</h3>
+                                </div>
+                              </li>
+							  <br>
+                              <li class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                  <i class="icon ion-md-checkmark"></i>
+                                  <h2>Available Balance</h2>
+                                </div>
+                                <div>
+                                  <h3 id="availableBal">0.00 EUR</h3>
+                                </div>
+                              </li>
+                            </ul>
+                            <button class="btn green" data-toggle="modal" data-target="#depositModal">Deposit</button>
+                            <button class="btn red" onclick="LoadAjaxContent('paypal.html')">Withdraw</button>
+							
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Latest Transactions</h5>
+                            <div class="wallet-history">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>No.</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>25-04-2021</td>
+                                    <td><i class="icon ion-md-checkmark-circle-outline green"></i></td>
+                                    <td>4.5454334</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>25-05-2021</td>
+                                    <td><i class="icon ion-md-checkmark-circle-outline green"></i></td>
+                                    <td>0.5484468</td>
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>25-06-2021</td>
+                                    <td><i class="icon ion-md-close-circle-outline red"></i></td>
+                                    <td>2.5454545</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>25-07-2021</td>
+                                    <td><i class="icon ion-md-checkmark-circle-outline green"></i></td>
+                                    <td>1.45894147</td>
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>25-08-2021</td>
+                                    <td><i class="icon ion-md-close-circle-outline red"></i></td>
+                                    <td>2.5454545</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                            </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  
+   
+ 
+  <script>
+  getCustomerAssets();
+  function search()
+  {
+  var input,filter,table,tr,td,i,txtValue;
+  input=document.getElementById("search");
+  
+ filter =input.value.toUpperCase();
+ table= document.getElementById("assettable");
+ tr= table.getElementsByTagName("tr");
+ for(i =0 ;i< tr.length;i++)
+ {
+ td= tr[i].getElementsByTagName("td")[0];
+ if(td){txtValue=td.textContent || td.innerText;
+ if(txtValue.toUpperCase().indexOf(filter)>-1)
+ {
+ tr[i].style.display="";
+ }else{tr[i].style.display="none";}
+ }
+ }
+  }
+  </script>
+
+  

@@ -1,0 +1,348 @@
+.btn-secondary,
+.btn-secondary:hover,
+.btn-check:active + .btn-secondary, .btn-check:checked + .btn-secondary, .btn-secondary.active, .btn-secondary:active, .show > .btn-secondary.dropdown-toggle,
+.btn-check:focus + .btn-secondary, .btn-secondary:focus{
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-check:active + .btn-primary, .btn-check:checked + .btn-primary, .btn-primary.active, .btn-primary:active, .show > .btn-primary.dropdown-toggle,
+.btn-check:focus + .btn-primary, .btn-primary:focus{
+    background-color: #ff8700;
+    border-color: #ff8700;
+    box-shadow: none;
+}
+
+a:hover,
+.btn-link:hover{
+    color: #ff8700;
+}
+
+body{
+    background: #0D0D15;
+    color: white;
+}
+
+body::after {
+    content: "";
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-image: url("graph.svg"), url("background.gif");
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat-x;
+    background-size: cover, 450px;
+    opacity: .3;
+}
+
+body.login::after {
+    background-image: url("graph.svg");
+    bottom: 0;
+    top: auto;
+}
+
+body,
+#wrapper,
+#content{
+    min-height: 100vh;
+}
+
+h1.big{
+    font-size: 60px;
+}
+
+@media (max-width: 992px) {
+
+    h1.big{
+        font-size: 48px;
+    }
+
+}
+
+.link-dark{
+    color: #616372;
+}
+
+.link-dark:focus, .link-dark:hover{
+    color: #FFFFFF;
+}
+
+.trade #trade,
+.settings #settings,
+.wallet #wallet,
+.news #news,
+.profile #profile{
+    color: #ff8700;
+}
+
+.link-dark svg path,
+.link-dark svg circle,
+.link-dark svg line{
+    stroke: currentColor;
+}
+
+.text-gray{
+    color: #6c757d;
+}
+
+a,
+.btn-link{
+    color: #fff;
+}
+
+.btn{
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: .05em;
+    font-size: 16px !important;
+}
+
+
+#sidebar{
+    background: #1F1F2E;
+}
+
+.nav-pills .nav-link.link-dark.active,
+.nav-pills .show > .nav-link.link-dark{
+    background: #0D0D15;
+}
+
+#main .nav-pills .nav-link.link-dark.active,
+#main .nav-pills .show > .nav-link.link-dark{
+    background: #1F1F2E;
+}
+.dropdown-item:nth-child(5) .icon i {
+    color: #10b759;
+}
+
+.header-img-icon .dropdown-header {
+    padding: 0px 20px;
+}
+
+.header-img-icon .profile-nav .nav-item .nav-link {
+    font-size: 14px;
+    padding: 5px 20px;
+}
+
+.header-img-icon .profile-nav {
+    padding-bottom: 11px;
+}
+
+.header-img-icon .profile-nav .nav-item .nav-link:hover {
+    color: #18214d;
+    background-color: #f8f9fa;
+}
+
+.header-img-icon .profile-nav .nav-item .nav-link.red {
+    color: #f74745;
+}
+
+.header-img-icon .profile-nav .nav-item .nav-link.red:hover {
+    color: #f74745 !important;
+}
+#sidebarSearch .icon {
+    display: block;
+    width: 19px;
+    height: 19px;
+    background: url("search.svg") no-repeat center center transparent;
+    top: .9em;
+    right: .9em;
+}
+
+.form-control,
+.form-control:focus{
+    background-color: #0D0D15;
+    border: none;
+    color: white;
+}
+
+#main .form-control,
+#main .form-control:focus,
+.form-select,
+.form-select:focus,
+.form-check-input{
+    background-color: #1F1F2E;
+    border: none;
+    color: white;
+}
+
+.productlist-product img{
+    width: 45px;
+    height: 45px;
+}
+
+.productlist-product:hover{
+    cursor: pointer;
+}
+
+.badge{
+    font-weight: 300;
+    line-height: 1rem;
+}
+
+.badge-big{
+    padding: 1em 1.5em;
+}
+
+.bg-success{
+    background: rgba(0,183,56,.1) !important;
+    color: rgba(0,183,56,1) !important;
+}
+
+.bg-danger{
+    background: rgba(242,3,83,.1) !important;
+    color: #FF3B00 !important;
+}
+
+.bg-secondary{
+    background: #0D0D15 !important;
+    color: white !important;
+    font-size: .4em;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-style: dashed;
+    border-color: #2E2E46 !important;
+}
+
+.table-sm > :not(caption) > * > * {
+    padding: .5rem .5rem;
+}
+
+
+
+#sidebar.background-image {
+    width: 100vw;
+    height: 50vh;
+    display: block;
+    background: url("../media/GoldCoin-Trading-Plattform.png") no-repeat center 5vh transparent;
+    background-size: auto;
+    background-size: 100vw;
+    z-index: -1;
+    box-shadow: inset 0 0 50px black;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .login #main{
+        background: rgba(0,0,0,.8);
+        height: 100%;
+        border-radius: 0 0 0 20px;
+    }
+
+}
+
+
+@media (min-width: 992px) {
+
+    #sidebar.background-image{
+        height: 100vh;
+        height: 100vh;
+        position: absolute;
+        background: url("../media/GoldCoin-Trading-Plattform.png") no-repeat left bottom transparent;
+        background-size: contain;
+        left: 0;
+        bottom: -50px;
+        box-shadow: none;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/*
+#############
+#############
+#############
+CHART
+#############
+#############
+#############
+*/
+
+.highcharts-container text{
+    color: white !important;
+    fill: white !important;
+}
+
+.highcharts-background{
+    fill: transparent;
+}
+
+.highcharts-grid-line{
+    stroke: #3E3E67;
+}
+
+.highcharts-tick,
+.highcharts-axis-line{
+    stroke: transparent;
+}
+
+.highcharts-button text{
+    color: white !important;
+    fill: white !important;
+}
+
+.highcharts-button-box{
+    fill: transparent;
+}
+
+.highcharts-button.highcharts-button-pressed .highcharts-button-box{
+    fill: #1F1F2E;
+}
+
+.highcharts-graph{
+    stroke: #ff8700;
+    stroke-width: 1;
+}
+
+.highcharts-tracker path{
+    fill: #ffffff;
+
+}
+
+.highcharts-title,
+.highcharts-navigator,
+.highcharts-credits,
+.highcharts-input-group,
+.highcharts-exporting-group,
+.highcharts-scrollbar,
+.highcharts-navigator-series,
+.highcharts-navigator-xaxis,
+.highcharts-navigator-yaxis,
+.highcharts-range-selector-group .highcharts-label{
+    display: none;
+}
+
+
+
+.card,
+.list-group-item{
+    background: transparent;
+}
+
+.card{
+    border: 1px solid rgba(240, 240, 240, 0.13);
+}
+
+.list-group-item{
+    border: none;
+}
+
+.border-bottom{
+    border-bottom-style: dashed !important;
+    border-bottom-color: #2E2E46 !important;
+}
+
