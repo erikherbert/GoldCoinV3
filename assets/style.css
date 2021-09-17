@@ -2,6 +2,13 @@
     color: white;
 }
 
+.red{
+    color: #FF3B00 !important;
+}
+
+.green{
+    color: rgba(0,183,56,1) !important
+}
 
 
 .btn-secondary,
@@ -111,10 +118,13 @@ a,
 
 #sidebar, .sidebar {
     background: #1F1F2E;
+    max-height: 80vh;
+    overflow: scroll;
+    border-radius: 8px;
 }
 
-#main #sidebar .form-control, #main #sidebar .form-control:focus {
-    background-color: #0D0D15;
+ .sidebar.darksidebar .form-control, .sidebar.darksidebar .form-control:focus {
+    background-color: #0D0D15 !important;
     border: none;
     color: white;
 }

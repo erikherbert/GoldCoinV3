@@ -211,7 +211,7 @@ DASHBOARD
     <div class="row sm-gutters">
 
 
-        <div class="col-md-3 p-3 rounded sidebar" id="sidebar">
+        <div class="col-md-3 p-3 rounded sidebar darksidebar" id="sidebar">
             <div class="market-pairs">
                 <h3 class="text-white">Products</h3>
 
@@ -474,9 +474,9 @@ DASHBOARD
         </div>
 
 
-        <div class="col-md-3 sidebar p-3">
+        <div class="col-md-3 p-3">
 
-            <div class="order-book" id="order-book">
+            <div class="order-book sidebar mb-3 p-3" id="order-book">
 
                 <h4>Order Book</h4>
 
@@ -511,6 +511,9 @@ DASHBOARD
                             <p id="change">0.0%</p>
                         </td>
 
+
+                        <span className="badge bg-success"><i className="bi-caret-up-fill"></i> +0.00 (0.00%)</span>
+
                     </tr>
 
                     </tbody>
@@ -521,7 +524,8 @@ DASHBOARD
 
                 </table>
             </div>
-            <div class="market-history mt-3" id="recent-trades">
+
+            <div class="market-history sidebar p-3" id="recent-trades">
 
                 <h4>Recent Trades</h4>
 
@@ -555,9 +559,9 @@ DASHBOARD
 
         <div class="col-md-12 my-5">
 
-            <div class="market-history market-order mt15">
+            <div class="market-history market-order">
 
-                <ul class="nav nav-pills" role="tablist">
+                <ul class="nav nav-pills mb-3" role="tablist">
 
                     <li class="nav-item">
                         <a class="nav-link link-dark active" id="openorders" onclick="Orders(assetId,'open')" href="#open-orders" role="tab" aria-selected="true" data-bs-toggle="tab" data-bs-target="#open-orders" type="button" role="tab" aria-controls="open-orders">Open Orders</a>
@@ -575,7 +579,7 @@ DASHBOARD
                     <div class="tab-pane fade show active" id="open-orders" role="tabpanel">
                         <table class="table">
                             <thead>
-                            <tr>
+                            <tr class="small">
                                 <th>Time</th>
                                 <th>All pairs</th>
                                 <th>All Types</th>
@@ -586,7 +590,7 @@ DASHBOARD
                                 <th>State</th>
                             </tr>
                             </thead>
-                            <tbody id="tbopen">
+                            <tbody id="tbopen" class="small">
 
                             </tbody>
                         </table>
@@ -594,7 +598,7 @@ DASHBOARD
                     <div class="tab-pane fade" id="stop-orders" role="tabpanel">
                         <table class="table">
                             <thead>
-                            <tr>
+                            <tr class="small">
                                 <th>Time</th>
                                 <th>All pairs</th>
                                 <th>All Types</th>
@@ -605,7 +609,7 @@ DASHBOARD
                                 <th>State</th>
                             </tr>
                             </thead>
-                            <tbody id="tbclosed">
+                            <tbody id="tbclosed" class="small">
 
                             </tbody>
                         </table>
@@ -613,7 +617,7 @@ DASHBOARD
                     <div class="tab-pane fade" id="order-history" role="tabpanel">
                         <table class="table">
                             <thead>
-                            <tr>
+                            <tr class="small">
                                 <th>Time</th>
                                 <th>All pairs</th>
                                 <th>All Types</th>
@@ -624,7 +628,7 @@ DASHBOARD
                                 <th>State</th>
                             </tr>
                             </thead>
-                            <tbody id="tball">
+                            <tbody id="tball" class="small">
 
                             </tbody>
                         </table>

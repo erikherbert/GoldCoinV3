@@ -704,10 +704,13 @@ function getAssets_Callback(result)
 	  if(result.status)
 	  {
 		 $("#assetslist").html("");
+
 		for(var i=0;i<result.data.length;i++)
 		{
 			$("#assetlist").append('<tr onclick="orderData('+result.data[i].id+',\''+result.data[i].symbol+'\')"> <td><i class="icon ion-md-star"></i>'+result.data[i].symbol+'</td> <td id="asset_'+result.data[i].id+'_price">0.00</td> <td id="asset_'+result.data[i].id+'_change" class="green">+0.0%</td> </tr>');
+
 		}
+
       }
       else{swal.fire("Error", result.message, "error");}
 	   $.unblockUI();
@@ -988,7 +991,7 @@ function Orders_Callback(result)
 		if(order.state==3)
 			{orderMsg="Cancelled";}
 			if(type=='open'){
-   $("#tb"+type+"").append('<tr><td>'+new Date(order.create_Date).toLocaleTimeString()+'</td><td>All</td><td>All</td>'+(order.orderType==1?'<td class="red">Sell</td>':'<td class="green">Buy</td>')+'</td><td>'+order.unitPrice+'</td><td>'+order.quantity+'</td><td>'+order.executedQuantity+'</td><td>'+orderMsg+'</td><td><button onclick="CancelOrder('+order.id+')" class="btn sell">Cancel</button></td></tr>');
+   $("#tb"+type+"").append('<tr><td>'+new Date(order.create_Date).toLocaleTimeString()+'</td><td>All</td><td>All</td>'+(order.orderType==1?'<td class="red">Sell</td>':'<td class="green">Buy</td>')+'</td><td>'+order.unitPrice+'</td><td>'+order.quantity+'</td><td>'+order.executedQuantity+'</td><td>'+orderMsg+'</td><td><button onclick="CancelOrder('+order.id+')" class="btn btn-secondary btn-sm sell">Cancel</button></td></tr>');
 		}else{ $("#tb"+type+"").append('<tr><td>'+new Date(order.create_Date).toLocaleTimeString()+'</td><td>All</td><td>All</td>'+(order.orderType==1?'<td class="red">Sell</td>':'<td class="green">Buy</td>')+'</td><td>'+order.unitPrice+'</td><td>'+order.quantity+'</td><td>'+order.executedQuantity+'</td><td>'+orderMsg+'</td></tr>');
 	}}
 	  if(result.data.length==0)

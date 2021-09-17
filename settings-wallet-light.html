@@ -1,16 +1,16 @@
 
 
-    <div class="container-xl">
+    <div class="container-fluid">
       <div class="row wallet">
 
 
-        <div class="col-md-4">
+        <div class="col-md-4 sidebar darksidebar p-3 rounded" id="sidebar">
 
-          <div id="main">
-            <div class="input-group position-relative" id="sidebarSearch">
-               <input type="text" class="form-control form-control-lg" onkeyup="search()" id="search" placeholder="Search" aria-describedby="inputGroup-sizing-sm">
-               <span class="icon position-absolute search-icon"></span>
-            </div>
+          <h3 class="text-white">Assets</h3>
+
+          <div class="input-group position-relative mb-3" id="sidebarSearch">
+             <input type="text" class="form-control form-control-lg" onkeyup="search()" id="search" placeholder="Search" aria-describedby="inputGroup-sizing-sm">
+             <span class="icon position-absolute search-icon"></span>
           </div>
 
           <div id="GLDB250g">
@@ -18,9 +18,9 @@
             <table class="table productlist-product" id="assettable">
               <thead>
                 <tr>
-                  <th>Assets</th>
-                  <th>Balance</th>
-                  <th>Locked</th>
+                  <th class="small fw-normal">Assets</th>
+                  <th class="small fw-normal">Balance</th>
+                  <th class="small fw-normal">Locked</th>
                 </tr>
               </thead>
               <tbody id="assetlist">
