@@ -315,11 +315,11 @@ DASHBOARD
                 <ul class="nav nav-pills mb-3" role="tablist">
 
                     <li class="nav-item">
-                        <a class="nav-link link-dark active" data-toggle="pill" href="#pills-trade-limit" role="tab" aria-selected="true">Limit</a>
+                        <a class="nav-link link-dark active" data-bs-toggle="tab" href="#pills-trade-limit" data-bs-target="#pills-trade-limit" role="tab" aria-controls="pills-trade-limit" aria-selected="true">Limit</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link link-dark" data-toggle="pill" href="#pills-market" role="tab" aria-selected="false">Market</a>
+                        <a class="nav-link link-dark" data-bs-toggle="tab" href="#pills-market" data-bs-target="#pills-market" role="tab" aria-controls="pills-market" aria-selected="false">Market</a>
                     </li>
 
                 </ul>
@@ -554,18 +554,21 @@ DASHBOARD
 
 
         <div class="col-md-12 my-5">
+
             <div class="market-history market-order mt15">
 
                 <ul class="nav nav-pills" role="tablist">
+
                     <li class="nav-item">
-                        <a class="nav-link link-dark active" id="openorders" data-toggle="pill" onclick="Orders(assetId,'open')" href="#open-orders" role="tab" aria-selected="true">Open Orders</a>
+                        <a class="nav-link link-dark active" id="openorders" onclick="Orders(assetId,'open')" href="#open-orders" role="tab" aria-selected="true" data-bs-toggle="tab" data-bs-target="#open-orders" type="button" role="tab" aria-controls="open-orders">Open Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-dark" data-toggle="pill" href="#stop-orders" onclick="Orders(assetId,'closed')"  role="tab" aria-selected="false">Closed Orders</a>
+                        <a class="nav-link link-dark" href="#stop-orders" onclick="Orders(assetId,'closed')" role="tab" aria-selected="false" data-bs-toggle="tab" data-bs-target="#stop-orders" type="button" role="tab" aria-controls="stop-orders">Closed Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-dark" data-toggle="pill" href="#order-history" onclick="Orders(assetId,'all')"  role="tab" aria-selected="false">Order history</a>
+                        <a class="nav-link link-dark" href="#order-history" onclick="Orders(assetId,'all')" role="tab" aria-selected="false" data-bs-toggle="tab" data-bs-target="#order-history" type="button" role="tab" aria-controls="order-history">Order history</a>
                     </li>
+
                 </ul>
 
                 <div class="tab-content text-white">
