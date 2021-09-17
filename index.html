@@ -207,11 +207,12 @@ DASHBOARD
 #################
 -->
 
-<div class="container-fluid mtb15 admin-container" id="main">
-    <div class="row sm-gutters">
+<div class="container-fluid  admin-container" id="main">
+
+    <div class="row align-items-start">
 
 
-        <div class="col-md-3 p-3 rounded sidebar darksidebar" id="sidebar">
+        <div class="col-xl-4 p-3 rounded sidebar darksidebar" id="sidebar">
             <div class="market-pairs">
                 <h3 class="text-white">Products</h3>
 
@@ -263,7 +264,7 @@ DASHBOARD
         </div>
 
 
-        <div class="col-md-6">
+        <div class="col-xl-5">
 
 
 
@@ -278,25 +279,27 @@ DASHBOARD
 
             <script>
 
-                const chart = LightweightCharts.createChart(document.getElementById('tradingviewchart'), { width: 800, height: 500 });
+                const chart = LightweightCharts.createChart(document.getElementById('tradingviewchart'), { width: 750, height: 250 });
 
-                const candlestickSeries = chart.addCandlestickSeries();
+                const candlestickSeries = chart.addCandlestickSeries({
+                    upColor: 'rgb(0,183,56)',
+                    downColor: '#FF3B00',
+                    borderVisible: false,
+                    wickVisible: true,
+                });
+
 
                 // @MONARCH set data here
                 candlestickSeries.setData([
-                    { time: '2020-12-19', open: 141.77, high: 170.39, low: 120.25, close: 145.72 },
-                    { time: '2020-12-20', open: 145.72, high: 147.99, low: 100.11, close: 108.19 },
-                    { time: '2020-12-21', open: 108.19, high: 118.43, low: 74.22, close: 75.16 },
-                    { time: '2020-12-22', open: 75.16, high: 82.84, low: 36.16, close: 45.72 },
-                    { time: '2020-12-23', open: 45.12, high: 53.90, low: 45.12, close: 48.09 },
-                    { time: '2020-12-24', open: 60.71, high: 60.71, low: 53.39, close: 59.29 },
-                    { time: '2020-12-25', open: 68.26, high: 68.26, low: 59.04, close: 60.50 },
-                    { time: '2020-12-26', open: 67.71, high: 105.85, low: 66.67, close: 91.04 },
-                    { time: '2020-12-27', open: 91.04, high: 121.40, low: 82.70, close: 111.40 },
-                    { time: '2020-12-28', open: 111.51, high: 142.83, low: 103.34, close: 131.25 },
-                    { time: '2020-12-29', open: 131.33, high: 151.17, low: 77.68, close: 96.43 },
-                    { time: '2020-12-30', open: 106.33, high: 110.20, low: 90.39, close: 98.10 },
-                    { time: '2020-12-31', open: 109.87, high: 114.69, low: 85.66, close: 111.26 },
+                    { time: '2021-06-19', open: 141.77, high: 170.39, low: 120.25, close: 145.72 },
+                    { time: '2021-06-20', open: 145.72, high: 147.99, low: 100.11, close: 108.19 },
+                    { time: '2021-06-21', open: 108.19, high: 118.43, low: 74.22, close: 75.16 },
+                    { time: '2021-06-22', open: 75.16, high: 82.84, low: 36.16, close: 45.72 },
+                    { time: '2021-06-23', open: 45.12, high: 53.90, low: 45.12, close: 48.09 },
+                    { time: '2021-06-24', open: 60.71, high: 60.71, low: 53.39, close: 59.29 },
+                    { time: '2021-06-25', open: 68.26, high: 68.26, low: 59.04, close: 60.50 },
+                    { time: '2021-06-26', open: 67.71, high: 105.85, low: 66.67, close: 91.04 },
+                    { time: '2021-06-27', open: 91.04, high: 121.40, low: 82.70, close: 111.40 },
                 ]);
 
 
@@ -319,6 +322,18 @@ DASHBOARD
                                 horzLines: {
                                     color: 'transparent',
                                 },
+                            },
+                            timeScale: {
+                                rightOffset: 12,
+                                barSpacing: 3,
+                                fixLeftEdge: true,
+                                fixRightEdge: true,
+                                lockVisibleTimeRangeOnResize: true,
+                                rightBarStaysOnScroll: true,
+                                borderVisible: false,
+                                visible: true,
+                                timeVisible: true,
+                                secondsVisible: false,
                             },
                     });
 
@@ -377,20 +392,18 @@ DASHBOARD
 
                             <div class="market-trade-buy col-12 col-md-6">
 
-                                <h6 class="text-uppercase mb-3">Buy</h6>
-
                                 <div class="input-group mb-3">
-                                    <input id="buyamount" type="number" class="form-control form-control-lg" placeholder="Unit Price">
+                                    <input id="buyamount" type="number" class="form-control" placeholder="Unit Price">
                                     <!--<span class="input-group-text">EUR</span>-->
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <input type="number" class="form-control form-control-lg" id="buyquantity" placeholder="Quantity">
+                                    <input type="number" class="form-control" id="buyquantity" placeholder="Quantity">
                                     <!--<span class="input-group-text currentAssetSymbol">GLDB250g</span>-->
                                 </div>
 
-                                <p>Available: <span class="availableBal">0 </span></p>
-                                <p>Locked Balance: <span class="lockedBal">0</span></p>
+                                <p class="small mb-0">Available: <span class="availableBal">0 </span></p>
+                                <p class="small text-muted">Locked Balance: <span class="lockedBal">0</span></p>
 
                                 <button onclick="BuyOrder(assetId,1)" class="btn btn-primary w-100 buy">Buy</button>
 
@@ -399,21 +412,19 @@ DASHBOARD
 
                             <div class="market-trade-sell col-12 col-md-6">
 
-                                <h6 class="text-uppercase mb-3">Sell</h6>
-
                                 <div class="input-group mb-3">
-                                    <input type="number" id="sellamount" class="form-control form-control-lg" placeholder="Unit Price">
+                                    <input type="number" id="sellamount" class="form-control" placeholder="Unit Price">
                                     <!--<span class="input-group-text">EUR</span>-->
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <input id="sellquantity" type="number" class="form-control form-control-lg" placeholder="Quantity">
+                                    <input id="sellquantity" type="number" class="form-control" placeholder="Quantity">
                                     <!--<span class="input-group-text currentAssetSymbol">GLDB250g</span>-->
                                 </div>
 
 
-                                <p>Available: <span class="availableAsset">0</span> <span class="currentAssetSymbol"></span></p>
-                                <p>Locked Balance: <span class="lockedAsset">0</span> <span class="currentAssetSymbol"></span></p>
+                                <p class="small mb-0">Available: <span class="availableAsset">0</span> <span class="currentAssetSymbol"></span></p>
+                                <p class="small text-muted">Locked Balance: <span class="lockedAsset">0</span> <span class="currentAssetSymbol"></span></p>
 
 
                                 <button onclick="SellOrder(assetId,1)" class="btn btn-secondary w-100 sell">Sell</button>
@@ -433,15 +444,13 @@ DASHBOARD
 
                             <div class="market-trade-buy col-12 col-md-6">
 
-                                <h6 class="text-uppercase mb-3">Buy</h6>
-
                                 <div class="input-group mb-3">
-                                    <input id="buyamount2" type="number" class="form-control form-control-lg" placeholder="Unit Price">
+                                    <input id="buyamount2" type="number" class="form-control" placeholder="Unit Price">
                                     <!--<span class="input-group-text">EUR</span>-->
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <input type="number" class="form-control form-control-lg" id="buyquantity2" placeholder="Quantity">
+                                    <input type="number" class="form-control" id="buyquantity2" placeholder="Quantity">
                                     <!--<span class="input-group-text currentAssetSymbol">GLDB250g</span>-->
                                 </div>
 
@@ -455,15 +464,13 @@ DASHBOARD
 
                             <div class="market-trade-sell col-12 col-md-6">
 
-                                <h6 class="text-uppercase mb-3">Sell</h6>
-
                                 <div class="input-group mb-3">
-                                    <input type="number" id="sellamount2" class="form-control form-control-lg" placeholder="Unit Price">
+                                    <input type="number" id="sellamount2" class="form-control" placeholder="Unit Price">
                                     <!--<span class="input-group-text">EUR</span>-->
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <input id="sellquantity2" type="number" class="form-control form-control-lg" placeholder="Quantity">
+                                    <input id="sellquantity2" type="number" class="form-control" placeholder="Quantity">
                                     <!--<span class="input-group-text currentAssetSymbol">GLDB250g</span>-->
                                 </div>
 
@@ -516,90 +523,90 @@ DASHBOARD
         </div>
 
 
-        <div class="col-md-3 p-3">
+        <div class="col-xl-3 p-3">
 
-            <div class="order-book sidebar mb-3 p-3" id="order-book">
+            <div class="order-book sidebar-order mb-3 p-3" id="order-book">
 
                 <h4>Order Book</h4>
 
-                <table class="table w-100">
+                <div class="scrolltable">
 
-                    <thead>
-                    <tr>
-                        <th class="small fw-normal">Price</th>
-                        <th class="small fw-normal">Amount(<span class="currentAssetSymbol"></span>)</th>
-                        <th class="small fw-normal">Total</th>
-                    </tr>
-                    </thead>
+                        <table class="table w-100">
 
-                    <tbody class="small" id="tbsellorder">
+                            <thead>
+                            <tr>
+                                <th class="small fw-normal">Price</th>
+                                <th class="small fw-normal">Amount</th>
+                                <th class="small fw-normal">Total</th>
+                            </tr>
+                            </thead>
 
-                    </tbody>
+                            <tbody class="small" id="tbsellorder">
 
-                    <tbody class="ob-heading">
-                    <tr>
+                            </tbody>
 
-                        <td class="small fw-normal">
-                            <span>Last Price</span>
-                            <p id="unitprice"> 0.00<p>
-                        </td>
+                            <tbody class="ob-heading">
+                            <tr>
 
-                        <td class="small fw-normal">
+                                <td class="small fw-normal">
+                                    <span>Last Price</span>
+                                    <p id="unitprice"> 0.00<p>
+                                </td>
 
-                        </td>
+                                <td class="small fw-normal">
 
-                        <td class="green small fw-normal">
-                            <span>Change</span>
-                            <p id="change">0.0%</p>
-                        </td>
+                                </td>
+
+                                <td class="green small fw-normal">
+                                    <span>Change</span>
+                                    <p id="change">0.0%</p>
+                                </td>
 
 
-                        <span className="badge bg-success"><i className="bi-caret-up-fill"></i> +0.00 (0.00%)</span>
 
-                    </tr>
+                            </tr>
 
-                    </tbody>
+                            </tbody>
 
-                    <tbody id="tbbuyorder" class="small">
+                            <tbody id="tbbuyorder" class="small">
 
-                    </tbody>
+                            </tbody>
 
-                </table>
+                        </table>
+
+                </div>
+
             </div>
 
-            <div class="market-history sidebar p-3" id="recent-trades">
+            <div class="market-history sidebar-order p-3" id="recent-trades">
 
                 <h4>Recent Trades</h4>
 
-                    <table class="table" id="tborderbook">
-                        <thead>
-                            <tr>
-                                <th class="small fw-normal">Time</th>
-                                <th class="small fw-normal">Price(<span class="currentAssetSymbol"></span>)</th>
-                                <th class="small fw-normal">Amount</th>
-                            </tr>
-                        </thead>
+                <div class="scrolltable">
 
-                        <tbody class="small">
+                        <table class="table" id="tborderbook">
+                            <thead>
+                                <tr>
+                                    <th class="small fw-normal">Time</th>
+                                    <th class="small fw-normal">Price</th>
+                                    <th class="small fw-normal">Amount</th>
+                                </tr>
+                            </thead>
 
-                        </tbody>
+                            <tbody class="small">
 
-                    </table>
+                            </tbody>
 
-                    <div id="market-depth">
-                        <div class="depth-chart-container">
-                            <div class="depth-chart-inner">
-                                <div id="lightDepthChart"></div>
-                            </div>
-                        </div>
-                    </div>
+                        </table>
+
+                </div>
 
             </div>
 
         </div>
 
 
-        <div class="col-md-12 my-5">
+        <div class="col-12 my-5">
 
             <div class="market-history market-order">
 
