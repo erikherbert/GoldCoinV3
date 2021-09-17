@@ -753,19 +753,19 @@ function getOrderBook_Callback(result)
 		 for(var i=0;i<result.data.executedOrder.length;i++)
 		{
 			var classorder=result.data.executedOrder[i].orderType==1?"red":"green";
-		$("#tborderbook tbody").append('<tr><td>'+new Date(result.data.executedOrder[i].create_Date).toLocaleTimeString()+'</td><td class="'+classorder+'">'+result.data.executedOrder[i].unitPrice+'</td><td>'+result.data.executedOrder[i].quantity+'</td></tr>');
+		$("#tborderbook tbody").append('<tr class="w-100"><td>'+new Date(result.data.executedOrder[i].create_Date).toLocaleTimeString()+'</td><td class="'+classorder+'">'+result.data.executedOrder[i].unitPrice+'</td><td>'+result.data.executedOrder[i].quantity+'</td></tr>');
       	
 		}
 		$("#tbsellorder").html("");
 		for(var i=0;i<result.data.sellOrder.length;i++)
 		{
-		$("#tbsellorder").append('<tr class="red'+getOrderClass(result.data.sellOrder[i].executedQuantity,result.data.sellOrder[i].quantity)+'"><td class="red">'+result.data.sellOrder[i].unitPrice+'</td><td>'+result.data.sellOrder[i].quantity+'</td><td>'+(result.data.sellOrder[i].quantity*result.data.sellOrder[i].unitPrice).toFixed(2)+'</td></tr>');
+		$("#tbsellorder").append('<tr class="w-100 red'+getOrderClass(result.data.sellOrder[i].executedQuantity,result.data.sellOrder[i].quantity)+'"><td class="red">'+result.data.sellOrder[i].unitPrice+'</td><td>'+result.data.sellOrder[i].quantity+'</td><td>'+(result.data.sellOrder[i].quantity*result.data.sellOrder[i].unitPrice).toFixed(2)+'</td></tr>');
       	
 		}
 		$("#tbbuyorder").html("");
 		for(var i=0;i<result.data.buyOrder.length;i++)
 		{
-		$("#tbbuyorder").append('<tr class="green'+getOrderClass(result.data.buyOrder[i].executedQuantity,result.data.buyOrder[i].quantity)+'"><td class="green">'+result.data.buyOrder[i].unitPrice+'</td><td>'+result.data.buyOrder[i].quantity+'</td><td>'+(result.data.buyOrder[i].quantity*result.data.buyOrder[i].unitPrice).toFixed(2)+'</td></tr>');
+		$("#tbbuyorder").append('<tr class="w-100 green'+getOrderClass(result.data.buyOrder[i].executedQuantity,result.data.buyOrder[i].quantity)+'"><td class="green">'+result.data.buyOrder[i].unitPrice+'</td><td>'+result.data.buyOrder[i].quantity+'</td><td>'+(result.data.buyOrder[i].quantity*result.data.buyOrder[i].unitPrice).toFixed(2)+'</td></tr>');
       	
 		}
 		if(result.data.marketdata!=null){

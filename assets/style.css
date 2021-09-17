@@ -118,9 +118,13 @@ a,
 
 #sidebar, .sidebar {
     background: #1F1F2E;
+    border-radius: 8px;
+}
+
+#sidebar .tab-content,
+.sidebar .tab-content{
     max-height: 80vh;
     overflow: scroll;
-    border-radius: 8px;
 }
 
  .sidebar.darksidebar .form-control, .sidebar.darksidebar .form-control:focus {
@@ -138,6 +142,11 @@ a,
 #main .nav-pills .show > .nav-link.link-dark{
     background: #1F1F2E;
 }
+
+.nav-pills{
+    overflow-x: scroll;
+}
+
 .dropdown-item:nth-child(5) .icon i {
     color: #10b759;
 }
@@ -385,4 +394,13 @@ CHART
     height: 45px;
     border-radius: 6px;
     background: #0D0D15;
+}
+
+
+
+
+
+#tradingviewchart .tv-lightweight-charts,
+#tradingviewchart .tv-lightweight-charts table{
+    width: 100% !important;
 }

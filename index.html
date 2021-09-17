@@ -164,7 +164,7 @@ HEADER
 
                 <!--Change it Monarch to the ne NEWS Site -->
 
-                <li><a href="news.php"  class="nav-link px-2 px-md-3 link-dark" id="news">
+                <li><a onclick="LoadAjaxContent('news.html','news')" href="#" class="nav-link px-2 px-md-3 link-dark" id="news">
                     <svg class="bi d-block mx-auto mb-1" xmlns="http://www.w3.org/2000/svg" width="23.507" height="25" viewBox="0 0 23.507 20.031">
                         <g id="Komponente_13_1" data-name="Komponente 13 – 1" transform="translate(0.645 0.706)">
                             <path id="Pfad_138" data-name="Pfad 138" d="M747.2,598.406l4.127,9.75a1.152,1.152,0,0,1-1.1,1.6l-3.814-.14a1.146,1.146,0,0,1-1.017-.7l-2.869-6.777a1.152,1.152,0,0,1,.2-1.22l2.556-2.833A1.151,1.151,0,0,1,747.2,598.406Z" transform="translate(-736.374 -594.177)" fill="none" stroke="#616372" stroke-miterlimit="10" stroke-width="1"></path>
@@ -227,7 +227,7 @@ DASHBOARD
                     </datalist>
                 </form>
 
-                <ul class="nav nav-pills mb-3 d-flex flex-nowrap w-100 justify-content-between" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills pb-4 d-flex flex-nowrap w-100 justify-content-between" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation" >
                         <button onclick="searchAsset('')" class="nav-link link-dark-full link-dark small active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">All</button>
                     </li>
@@ -270,17 +270,59 @@ DASHBOARD
             <h1><span class="currentAssetSymbol"></span></h1>
 
 
-            <div class="main-chart">
+
+            <div id="tradingviewchart" class="w-100 my-5"></div>
 
 
-                <!-- TradingView Widget BEGIN -->
-                <div  class="tradingview-widget-container">
-                    <div style="height: 550px;"id="container"></div>
-                </div>
-                <!-- TradingView Widget END -->
+            <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+            <script>
+
+                const chart = LightweightCharts.createChart(document.getElementById('tradingviewchart'), { width: 800, height: 500 });
+
+                const candlestickSeries = chart.addCandlestickSeries();
+
+                // @MONARCH set data here
+                candlestickSeries.setData([
+                    { time: '2020-12-19', open: 141.77, high: 170.39, low: 120.25, close: 145.72 },
+                    { time: '2020-12-20', open: 145.72, high: 147.99, low: 100.11, close: 108.19 },
+                    { time: '2020-12-21', open: 108.19, high: 118.43, low: 74.22, close: 75.16 },
+                    { time: '2020-12-22', open: 75.16, high: 82.84, low: 36.16, close: 45.72 },
+                    { time: '2020-12-23', open: 45.12, high: 53.90, low: 45.12, close: 48.09 },
+                    { time: '2020-12-24', open: 60.71, high: 60.71, low: 53.39, close: 59.29 },
+                    { time: '2020-12-25', open: 68.26, high: 68.26, low: 59.04, close: 60.50 },
+                    { time: '2020-12-26', open: 67.71, high: 105.85, low: 66.67, close: 91.04 },
+                    { time: '2020-12-27', open: 91.04, high: 121.40, low: 82.70, close: 111.40 },
+                    { time: '2020-12-28', open: 111.51, high: 142.83, low: 103.34, close: 131.25 },
+                    { time: '2020-12-29', open: 131.33, high: 151.17, low: 77.68, close: 96.43 },
+                    { time: '2020-12-30', open: 106.33, high: 110.20, low: 90.39, close: 98.10 },
+                    { time: '2020-12-31', open: 109.87, high: 114.69, low: 85.66, close: 111.26 },
+                ]);
 
 
-            </div>
+                chart.applyOptions({
+                            layout: {
+                                backgroundColor: 'transparent',
+                                lineColor: '#2B2B43',
+                                textColor: '#EEE',
+                            },
+                            watermark: {
+                                color: 'rgba(0, 0, 0, 0)',
+                            },
+                            crosshair: {
+                                color: '#758696',
+                            },
+                            grid: {
+                                vertLines: {
+                                    color: 'transparent',
+                                },
+                                horzLines: {
+                                    color: 'transparent',
+                                },
+                            },
+                    });
+
+            </script>
 
 
 
@@ -490,7 +532,7 @@ DASHBOARD
                     </tr>
                     </thead>
 
-                    <tbody class="d-flex" id="tbsellorder">
+                    <tbody class="small" id="tbsellorder">
 
                     </tbody>
 
@@ -518,7 +560,7 @@ DASHBOARD
 
                     </tbody>
 
-                    <tbody id="tbbuyorder">
+                    <tbody id="tbbuyorder" class="small">
 
                     </tbody>
 
@@ -538,7 +580,7 @@ DASHBOARD
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody class="small">
 
                         </tbody>
 
