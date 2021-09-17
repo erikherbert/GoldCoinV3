@@ -663,9 +663,9 @@ function getCustomerAssets_Callback(result)
 			$("#assetlist").append('<tr onclick="window.location=\'index.html?assetId='+result.data.info[i].asset.id+'&assetName='+result.data.info[i].asset.symbol+'\'"> <td class="d-flex"><div class="file-thumbnail me-2"><img src="'+result.data.info[i].asset.imageUrl+'"></img></div>'+result.data.info[i].asset.name+'</td> <td>'+result.data.info[i].customer.balance.toFixed(2)+'</td> <td><i class="icon ion-md-lock"></i>'+result.data.info[i].customer.lockedBalance.toFixed(2)+'</td> </tr>');
 
 		}
-		$("#totalBal").html((parseFloat(result.data.balance)+parseFloat(result.data.lockedBalance)).toFixed(2)+" EUR");
-		$("#lockBal").html(result.data.lockedBalance.toFixed(2)+" EUR");
-		$("#availableBal").html(result.data.balance.toFixed(2)+" EUR");
+		$("#totalBal").html((parseFloat(result.data.balance)+parseFloat(result.data.lockedBalance)).toFixed(2));
+		$("#lockBal").html(result.data.lockedBalance.toFixed(2));
+		$("#availableBal").html(result.data.balance.toFixed(2));
 		
       }
       else{swal.fire("Error", result.message, "error");}
@@ -685,7 +685,7 @@ function getAssets_Callback1(result)
 		 $("#pills-home").html("");
 		for(var i=0;i<result.data.length;i++)
 		{
-			$("#pills-home").append('<li id="asset_'+result.data[i].symbol+'" class="productlist-product mb-3 d-flex flex-nowrap justify-content-between" onclick="orderData('+result.data[i].id+',\''+result.data[i].symbol+'\')">                    <div class="file-thumbnail me-2">                        <img class="fit-cover rounded-3" src="'+result.data[i].imageUrl+'" alt="">                    </div>                    <div class="me-3 w-100">                        <h6 id="name_'+result.data[i].symbol+'" class="mb-1">'+result.data[i].name+'/EUR</h6>                        <div class="d-flex flex-nowrap justify-content-between">                            <h6 class="text-secondary" id="asset_'+result.data[i].id+'_price">0.00 EUR</h6><span class="badge bg-success" id="asset_'+result.data[i].id+'_change"><i class="bi-caret-up-fill"></i> +0.00 EUR (0.00%)</span>                        </div>                    </li>                                   </div>');
+			$("#pills-home").append('<li id="asset_'+result.data[i].symbol+'" class="productlist-product mb-3 d-flex flex-nowrap justify-content-between" onclick="orderData('+result.data[i].id+',\''+result.data[i].symbol+'\')">                    <div class="file-thumbnail me-2">                        <img class="fit-cover rounded-3" src="'+result.data[i].imageUrl+'" alt="">                    </div>                    <div class="me-3 w-100">                        <h6 id="name_'+result.data[i].symbol+'" class="mb-1">'+result.data[i].name+'</h6>                        <div class="d-flex flex-nowrap justify-content-between">                            <h6 class="text-secondary" id="asset_'+result.data[i].id+'_price">0.00</h6><span class="badge bg-success" id="asset_'+result.data[i].id+'_change"><i class="bi-caret-up-fill"></i> +0.00 (0.00%)</span>                        </div>                    </li>                                   </div>');
 		}
 	    }
       else{swal.fire("Error", result.message, "error");}
@@ -706,7 +706,7 @@ function getAssets_Callback(result)
 		 $("#assetslist").html("");
 		for(var i=0;i<result.data.length;i++)
 		{
-			$("#assetlist").append('<tr onclick="orderData('+result.data[i].id+',\''+result.data[i].symbol+'\')"> <td><i class="icon ion-md-star"></i>'+result.data[i].symbol+'/EUR</td> <td id="asset_'+result.data[i].id+'_price">0.00</td> <td id="asset_'+result.data[i].id+'_change" class="green">+0.0%</td> </tr>');
+			$("#assetlist").append('<tr onclick="orderData('+result.data[i].id+',\''+result.data[i].symbol+'\')"> <td><i class="icon ion-md-star"></i>'+result.data[i].symbol+'</td> <td id="asset_'+result.data[i].id+'_price">0.00</td> <td id="asset_'+result.data[i].id+'_change" class="green">+0.0%</td> </tr>');
 		}
       }
       else{swal.fire("Error", result.message, "error");}
@@ -725,8 +725,8 @@ function getCustomerBal_Callback(result)
 {
 	  if(result.status)
 	  {
-		$(".availableBal").html(result.data.balance+" EUR");
-		$(".lockedBal").html(result.data.lockedBalance+" EUR");
+		$(".availableBal").html(result.data.balance);
+		$(".lockedBal").html(result.data.lockedBalance);
 		$(".availableAsset").html(result.data.assetBal+" "+assetName);
 		$(".lockedAsset").html(result.data.assetLocked+" "+assetName);
       }
@@ -799,15 +799,15 @@ function getMarketDataPrice_Callback(result)
 	  {
 for(var i=0;i<result.data.length;i++)
 		{
-$("#asset_"+result.data[i].assetId+"_price").html(parseFloat(result.data[i].lastPrice).toFixed(2)+" EUR");
+$("#asset_"+result.data[i].assetId+"_price").html(parseFloat(result.data[i].lastPrice).toFixed(2));
 
 if(parseFloat(result.data[i].change)<0)
 {	
-$("#asset_"+result.data[i].assetId+"_change").html("<i class='bi-caret-down-fill'></i>-0.00 EUR ("+result.data[i].change+"%)");
+$("#asset_"+result.data[i].assetId+"_change").html("<i class='bi-caret-down-fill'></i>-0.00 ("+result.data[i].change+"%)");
 $("#asset_"+result.data[i].assetId+"_change").addClass("bg-danger"); 
 $("#asset_"+result.data[i].assetId+"_change").removeClass("bg-success");      	
 }else{
-	$("#asset_"+result.data[i].assetId+"_change").html("<i class='bi-caret-up-fill'></i>+0.00 EUR ("+result.data[i].change+"%)");
+	$("#asset_"+result.data[i].assetId+"_change").html("<i class='bi-caret-up-fill'></i>+0.00 ("+result.data[i].change+"%)");
 $("#asset_"+result.data[i].assetId+"_change").addClass("bg-success"); 
 $("#asset_"+result.data[i].assetId+"_change").removeClass("bg-danger"); 	
 }		}
