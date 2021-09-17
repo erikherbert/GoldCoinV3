@@ -746,11 +746,7 @@ FOOTER
 
 
 <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('assetName');
-    const myParam2 = urlParams.get('assetId');
-    var assetName= myParam=== undefined || null ? "GLDB250g" : myParam;
-    assetId=myParam2=== undefined || null ? 1 : parseInt(myParam2);
+     var assetName=  "GLDB250g";
     var orderbookInterval=null;
     var marketDataInterval=null;
 
@@ -809,7 +805,7 @@ FOOTER
     //getMarketDataPrice();
     var orderbookInterval=null;
     var marketDataInterval=null;
-    orderData(assetId,assetName);
+    orderData(1,"GLDB250g");
 
     function orderData(assetid,symbol)
     {
