@@ -111,8 +111,6 @@ a,
 
 #sidebar, .sidebar {
     background: #1F1F2E;
-    max-height: 80vh;
-    overflow: scroll;
 }
 
 #main #sidebar .form-control, #main #sidebar .form-control:focus {
@@ -232,6 +230,10 @@ tbody, td, tfoot, th, thead, tr {
 
 .table-sm > :not(caption) > * > * {
     padding: .5rem .5rem;
+}
+
+.table > :not(caption) > * > *{
+    padding: .5rem .5rem .5rem 0;
 }
 
 
