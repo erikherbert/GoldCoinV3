@@ -272,7 +272,7 @@ DASHBOARD
 
 
 
-            <div id="tradingviewchart" class="w-100 my-5"></div>
+            <div id="tradingviewchart" class="w-100 my-3"></div>
 
 
             <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
@@ -454,8 +454,8 @@ DASHBOARD
                                     <!--<span class="input-group-text currentAssetSymbol">GLDB250g</span>-->
                                 </div>
 
-                                <p>Available: <span class="availableBal">0 </span></p>
-                                <p>Locked Balance: <span class="lockedBal">0</span></p>
+                                <p class="small mb-0">Available: <span class="availableBal">0 </span></p>
+                                <p class="small text-muted">Locked Balance: <span class="lockedBal">0</span></p>
 
                                 <button onclick="BuyOrder2(assetId,0)" class="btn btn-primary w-100 buy">Buy</button>
 
@@ -475,8 +475,8 @@ DASHBOARD
                                 </div>
 
 
-                                <p>Available: <span class="availableAsset">0</span> <span class="currentAssetSymbol"></span></p>
-                                <p>Locked Balance: <span class="lockedAsset">0</span> <span class="currentAssetSymbol"></span></p>
+                                <p class="small mb-0">Available: <span class="availableAsset">0</span> <span class="currentAssetSymbol"></span></p>
+                                <p class="small text-muted">Locked Balance: <span class="lockedAsset">0</span> <span class="currentAssetSymbol"></span></p>
 
 
                                 <button onclick="SellOrder2(assetId,0)" class="btn btn-secondary w-100 sell">Sell</button>
@@ -606,7 +606,7 @@ DASHBOARD
         </div>
 
 
-        <div class="col-12 my-5">
+        <div class="col-12 mt-3">
 
             <div class="market-history market-order">
 
@@ -624,7 +624,7 @@ DASHBOARD
 
                 </ul>
 
-                <div class="tab-content text-white">
+                <div class="tab-content text-white p-3 sidebar-order">
                     <div class="tab-pane fade show active" id="open-orders" role="tabpanel">
                         <table class="table">
                             <thead>

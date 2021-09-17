@@ -728,10 +728,10 @@ function getCustomerBal_Callback(result)
 {
 	  if(result.status)
 	  {
-		$(".availableBal").html(result.data.balance);
-		$(".lockedBal").html(result.data.lockedBalance);
-		$(".availableAsset").html(result.data.assetBal+" "+assetName);
-		$(".lockedAsset").html(result.data.assetLocked+" "+assetName);
+		$(".availableBal").html(result.data.balance+" "+assetName);
+		$(".lockedBal").html(result.data.lockedBalance+" "+assetName);
+		$(".availableAsset").html(result.data.assetBal);
+		$(".lockedAsset").html(result.data.assetLocked);
       }
       else{swal.fire("Error", result.message, "error");}
 	   $.unblockUI();
