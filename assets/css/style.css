@@ -1,6 +1,7 @@
 @import url("bootstrap.min.css");
 @import url("ionicons.min.css");
 @import url("jquery.mCustomScrollbar.min.css");
+
 .nav-pills .nav-link.link-dark.active,
 .nav-pills .show > .nav-link.link-dark{
     background: #0D0D15;
@@ -10,6 +11,9 @@
 #main .nav-pills .show > .nav-link.link-dark{
     background: #1F1F2E;
 }
+
+
+
 
 
 body::after {

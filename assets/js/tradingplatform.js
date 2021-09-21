@@ -208,7 +208,19 @@ document.getElementById('captcha').innerHTML="";
     if ($('#Email').val() === '' || $('#Password').val() === '')
     {
        // alert('Please Fill the Email/Password');
-		swal.fire("Error", "Please Fill the Email/Password", "error");
+		swal.fire({
+			title: 'Not found',
+			text: 'Please enter a valid E-Mail and Password',
+			icon: '',
+			background: '#000',
+			customClass: {
+				closeButton: 'btn btn-primary',
+				confirmButton: 'btn btn-primary',
+				cancelButton: 'btn btn-primary',
+				denyButton: 'btn btn-primary',
+			},
+			buttonsStyling: false
+		});
 		
         return false;
     }
