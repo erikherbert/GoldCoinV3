@@ -143,36 +143,16 @@ a,
 
 
 .scrolltable,
-.sidebar .tab-content {
+.sidebar .tab-content,
+.nav-pills{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-
 .scrolltable::-webkit-scrollbar,
-.sidebar .tab-content::-webkit-scrollbar {
+.sidebar .tab-content::-webkit-scrollbar,
+.nav-pills::-webkit-scrollbar{
     display: none;
-}
-
-
-/* width */
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #868686;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #5b5b5b;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #313131;
 }
 
 
