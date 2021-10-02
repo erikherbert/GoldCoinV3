@@ -426,6 +426,14 @@ CHART
     background: #0D0D15;
 }
 
+.file-thumbnail img{
+    transition: all .1s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.productlist-product:hover .file-thumbnail img{
+    transform: translateX(3px);
+}
+
 
 
 
